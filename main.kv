@@ -1,0 +1,22 @@
+#:kivy 2.0.0
+
+BoxLayout:
+    padding: "10dp"
+    orientation: 'vertical'
+
+    MDTextField:
+        id: text_field
+        hint_text: "Get blogpost by slug (press 'Enter')"
+        helper_text: "There will always be a mistake"
+        helper_text_mode: "on_error"
+        pos_hint: {"center_y": .95}
+
+    ScrollView:
+        id: scroll
+        pos_hint: {"center_y": .1}
+        TextInput:
+            id: scroll_text
+            size_hint: 1, None
+            text: ""
+            disabled: True
+            height: max(self.minimum_height, scroll.height)
